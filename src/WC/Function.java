@@ -13,29 +13,29 @@ public class Function {
 	int c = 0;
 	String s;
 	BufferedReader bin;
-	
+	//åˆ›å»ºæ–‡ä»¶è¾“å…¥æµ
 	public Function(String File) throws FileNotFoundException 
 	{   
 		
 		File file = new File(File);
 		if(file.exists()==false)
 		{
-		 System.out.println(File+"²»´æÔÚ");
+		 System.out.println(File+"ä¸å­˜åœ¨");
 		 return ;
 		}
 		else System.out.println(File+":");
 	InputStreamReader fis = new InputStreamReader(new FileInputStream(File));
 	this.bin = new BufferedReader(fis);
 	}
-   
+   //åˆ¤æ–­è¡Œæ•°
 	public void LCount() throws IOException {
     	int LineCount = 0;
 	 while((s=bin.readLine())!=null)
 		 LineCount = LineCount + 1;
-	System.out.println("ĞĞÊıÎª:"+LineCount);
+	System.out.println("è¡Œæ•°ä¸º:"+LineCount);
 	bin.close();
      }
-   
+   //åˆ¤æ–­è¯æ•°
     public void WCount() throws IOException 
     {
     	int WordCount = 0;
@@ -46,10 +46,10 @@ public class Function {
 		Matcher m = p.matcher(s);
 		while(m.find()) WordCount++;
 	}
-	System.out.println("µ¥´ÊÊıÎª:"+WordCount);
+	System.out.println("å•è¯æ•°ä¸º:"+WordCount);
 	bin.close();
 }
-    
+    //åˆ¤æ–­å­—ç¬¦æ•°
     public void CCount() throws IOException {
     	int CharsCount = 0;
 	while((s=bin.readLine())!=null)
@@ -59,10 +59,10 @@ public class Function {
 			if(s2 ==' ') continue;
 			else CharsCount=CharsCount+1;
 	}
-	System.out.println("×Ö·ûÊıÎª:"+CharsCount);
+	System.out.println("å­—ç¬¦æ•°ä¸º:"+CharsCount);
 	bin.close();
 	}
-	
+	//åˆ¤æ–­ç©ºç™½è¡Œã€ä»£ç è¡Œã€æ³¨é‡Šè¡Œçš„æ•°é‡
     public void ALLCount() throws IOException {
 		int CodeLine = 0;
 	    int BlankLine = 0;
@@ -81,9 +81,9 @@ public class Function {
 			}
 			else CodeLine++ ;
 		}
-		System.out.println("¿Õ°×ĞĞÓĞ£º"+BlankLine+"ĞĞ");
-		System.out.println("´úÂëĞĞÓĞ£º"+CodeLine+"ĞĞ");
-		System.out.println("×¢ÊÍĞĞÓĞ£º"+ExplainLine+"ĞĞ");
+		System.out.println("ç©ºç™½è¡Œæœ‰ï¼š"+BlankLine+"è¡Œ");
+		System.out.println("ä»£ç è¡Œæœ‰ï¼š"+CodeLine+"è¡Œ");
+		System.out.println("æ³¨é‡Šè¡Œæœ‰ï¼š"+ExplainLine+"è¡Œ");
 		bin.close();
 	}
 }
