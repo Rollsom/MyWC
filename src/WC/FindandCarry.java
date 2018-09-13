@@ -24,7 +24,7 @@ public class FindandCarry {
 		py = px.replaceAll("\\?", ".?");
 		this.Type = ".*"+py+".*";		
 		}
-//搜寻所有符合要求的文件路径
+//递归搜寻所有符合要求的文件路径
 	public void GetTargetFilePath(List<String> Path,File MenuPath) {
 	File[] files = MenuPath.listFiles();
 	if(files == null) return ;
