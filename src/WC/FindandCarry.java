@@ -22,7 +22,7 @@ public class FindandCarry {
 		//将搜寻的条件转换为正则表达式
 		px = Type.replaceAll("\\*", ".*");
 		py = px.replaceAll("\\?", ".?");
-		this.Type = ".*"+py+".*";		
+		this.Type = py+".*";		
 		}
 //递归搜寻所有符合要求的文件路径
 	public void GetTargetFilePath(List<String> Path,File MenuPath) {
